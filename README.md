@@ -5,12 +5,10 @@ Link to my CodeWars: <a href="https://www.codewars.com/users/Dids109" target="_b
 
 ## K A T A S
 <details>
-<summary>5 kyu</summary>
+<summary>8 kyu</summary>
 
-
-### [8 kyu katas](src/8kyu/)  
-[break camelCase](src/6kyu/break-camelCase.ts)  
-[split list odd even](src/6kyu/split-list-odd-even.ts)  
+### [8 kyu katas](src/8kyu)  
+[Double Sum](src/8kyu/doubleSum.ts)  
 </details>  
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
