@@ -1,4 +1,17 @@
-# TypeScript Kata Template
+# T Y P E S C R I P T | C O D E W A R S - K A T A S  
+
+These are completed CodeWars Katas in TypeScript
+Link to my CodeWars: <a href="https://www.codewars.com/users/Dids109" target="_blank">here</a>  
+
+## K A T A S
+<details>
+<summary>5 kyu</summary>
+
+
+### [8 kyu katas](src/8kyu/)  
+[break camelCase](src/6kyu/break-camelCase.ts)  
+[split list odd even](src/6kyu/split-list-odd-even.ts)  
+</details>  
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
