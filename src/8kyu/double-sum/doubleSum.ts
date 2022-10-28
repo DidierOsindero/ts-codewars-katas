@@ -3,9 +3,9 @@
 
 /**
  * Given two numbers, return the sum of the second number multiplied by two and the first number.
- * @param num1 - the first number to add
- * @param num2 - the second number to multiply by 2 and add
- * @returns the total
+ * @param {number} num1 - the first number to add
+ * @param {number} num2 - the second number to multiply by 2 and add
+ * @returns {number} the total
  */
 function doubleSum(num1: number, num2: number): number {
   return num1 + num2 * 2;
