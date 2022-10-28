@@ -8,12 +8,14 @@ Link to my CodeWars: <a href="https://www.codewars.com/users/Dids109" target="_b
 <summary>8 kyu</summary>
 
 ### [8 kyu katas](src/8kyu)  
-[Double Sum](src/8kyu/double-sum)  
+[Double Sum](src/8kyu/double-sum)
+</details>
 
+<details>
  <summary>7 kyu</summary>
 
 ### [7 kyu katas](src/7kyu)  
-</details> 
+</details>
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
 
