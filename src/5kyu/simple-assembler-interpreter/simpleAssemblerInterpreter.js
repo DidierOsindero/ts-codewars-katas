@@ -91,7 +91,6 @@ function isConstant(char) {
   return /[0-9]/.test(char);
 }
 
-simpleInterpreter(test1);
 module.exports = simpleInterpreter;
 
 /*
