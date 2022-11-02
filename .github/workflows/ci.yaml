@@ -15,8 +15,6 @@ jobs:
         run: yarn
       - name: Check formatting with Prettier
         run: yarn prettier --check src
-      - name: Lint with ESLint
-        run: yarn eslint src
       - name: Check type compilation with TypeScript
         run: yarn type-check
       - name: Run tests with Jest
