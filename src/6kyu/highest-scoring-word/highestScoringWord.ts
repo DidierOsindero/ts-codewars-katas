@@ -9,20 +9,20 @@
  */
 
 export const high = (str: string): string => {
-    const alphabet: string = "abcdefghijklmnopqrstuvwxyz"
-    const wordArr: string[] = str.split(' ');
-    let maxSoFar: string = "";
-    let maxCount: number = 0;
-    
-    for (let word of wordArr) {
-      let wordCount: number = 0;
-      for (let letter of word) {
-        wordCount += alphabet.indexOf(letter)+1;
-      }
-      if (wordCount > maxCount) {
-        maxCount = wordCount;
-        maxSoFar = word;
-      }
+  const alphabet: string = "abcdefghijklmnopqrstuvwxyz";
+  const wordArr: string[] = str.split(" ");
+  let maxSoFar: string = "";
+  let maxCount: number = 0;
+
+  for (const word of wordArr) {
+    let wordCount: number = 0;
+    for (const letter of word) {
+      wordCount += alphabet.indexOf(letter) + 1;
     }
-    return maxSoFar
+    if (wordCount > maxCount) {
+      maxCount = wordCount;
+      maxSoFar = word;
+    }
   }
+  return maxSoFar;
+};
