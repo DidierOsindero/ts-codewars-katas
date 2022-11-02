@@ -1,4 +1,4 @@
-# T Y P E S C R I P T | K A T A S  
+# T Y P E S C R I P T / J A V A S C R I P T | K A T A S  
 
 These are completed CodeWars Katas in TypeScript  
 Link to my CodeWars: <a href="https://www.codewars.com/users/Dids109" target="_blank">here</a>  
