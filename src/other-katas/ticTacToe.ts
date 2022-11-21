@@ -11,10 +11,12 @@ type Player = "x" | "o" | "";
 
 const calcWinState = (BoardState: Player[][]): WinState => {
   const xwonByRow = BoardState.some((row) => row.every((el) => el === "x")); //BoardState[0].every(el => el === 'x') || BoardState[1].every(el => el === 'x') || BoardState[2].every(el => el === 'x');
+
   const xwonByColumn =
     BoardState.every((row) => row[0] === "x") ||
     BoardState.every((row) => row[1] === "x") ||
     BoardState.every((row) => row[2] === "x");
+
   const xwonByDiagonal =
     (BoardState[0][0] === "x" &&
       BoardState[1][1] === "x" &&
@@ -24,10 +26,12 @@ const calcWinState = (BoardState: Player[][]): WinState => {
       BoardState[2][0] === "x");
 
   const ywonByRow = BoardState.some((row) => row.every((el) => el === "o")); //BoardState[0].every(el => el === 'o') || BoardState[1].every(el => el === 'o') || BoardState[2].every(el => el === 'o');
+
   const ywonByColumn =
     BoardState.every((row) => row[0] === "o") ||
     BoardState.every((row) => row[1] === "o") ||
     BoardState.every((row) => row[2] === "o");
+
   const ywonByDiagonal =
     (BoardState[0][0] === "o" &&
       BoardState[1][1] === "o" &&
