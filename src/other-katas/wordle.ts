@@ -1,11 +1,12 @@
 type Status = "not included" | "matched" | "included";
+type MarkedGuess = [IChar, IChar, IChar, IChar, IChar];
 
 interface IChar {
   value: string;
   status: Status;
 }
 
-type MarkedGuess = [IChar, IChar, IChar, IChar, IChar];
+//================MAIN FUNCTION===============
 
 export function markWordleGuess(
   guess: string,
@@ -18,20 +19,19 @@ export function markWordleGuess(
     { value: guess[3], status: "not included" },
     { value: guess[4], status: "not included" },
   ];
-
   findMatches(MarkedGuess, hiddenTaget);
   if (guess === hiddenTaget) {
     return MarkedGuess;
   }
-
   findIncluded(MarkedGuess, hiddenTaget);
-
   return MarkedGuess;
 }
 
+//================HELPER FUNCTIONS===============
+
 function findMatches(markedGuess: MarkedGuess, hiddenTaget: string): void {
   for (let charIdx in markedGuess) {
-    if (markedGuess[charIdx].value === hiddenTaget[charIdx]){
+    if (markedGuess[charIdx].value === hiddenTaget[charIdx]) {
       markedGuess[charIdx].status = "matched";
     }
   }
