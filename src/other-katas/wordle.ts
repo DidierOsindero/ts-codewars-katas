@@ -7,7 +7,10 @@ interface IChar {
 
 type MarkedGuess = [IChar, IChar, IChar, IChar, IChar];
 
-export function markWordleGuess(guess: string, hiddenTaget: string): MarkedGuess {
+export function markWordleGuess(
+  guess: string,
+  hiddenTaget: string
+): MarkedGuess {
   let MarkedGuess: MarkedGuess = [
     { value: guess[0], status: "not included" },
     { value: guess[1], status: "not included" },
@@ -28,13 +31,11 @@ export function markWordleGuess(guess: string, hiddenTaget: string): MarkedGuess
 
 function findMatches(markedGuess: MarkedGuess, hiddenTaget: string): void {
   for (let charIdx in markedGuess) {
-    if (markedGuess[charIdx].value === hiddenTaget[charIdx])
+    if (markedGuess[charIdx].value === hiddenTaget[charIdx]){
       markedGuess[charIdx].status = "matched";
+    }
   }
 }
-
-
-
 
 function findIncluded(markedGuess: MarkedGuess, hiddenTarget: string): void {
   const refHiddenTarget: string[] = [...hiddenTarget.split("")];
