@@ -1,6 +1,6 @@
 import { markWordleGuess } from "./wordle";
 
-test("CalcWinState checks to see if a game of tic tac toe is won, drawn or not finished", () => {
+test("markWordleGuess checks which words in a string match/are included in a target string and returns an object with this information for each character.", () => {
   expect(markWordleGuess("HELLO", "HELLO")).toStrictEqual([
     { value: "H", status: "matched" },
     { value: "E", status: "matched" },
