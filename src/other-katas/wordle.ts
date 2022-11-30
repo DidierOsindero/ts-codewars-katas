@@ -56,34 +56,3 @@ function findIncluded(markedGuess: MarkedGuess, hiddenTarget: string): void {
     }
   }
 }
-
-// console.log(markWordleGuess("llabc", "lzyxa"));
-// console.log(markWordleGuess("lqabc", "lqyxa"));
-// console.log(markWordleGuess("hello", "world"));
-const target1 = "WOLRD";
-const guess1: MarkedGuess = [
-  { value: "H", status: "not included" },
-  { value: "E", status: "not included" },
-  { value: "L", status: "matched" },
-  { value: "O", status: "not included" },
-  { value: "O", status: "not included" },
-];
-findIncluded(guess1, target1);
-console.log(guess1);
-
-// for (let i = 0; i < MarkedGuess.length; i++) {
-//     if (perfectMatch(MarkedGuess[i].value), hiddenTaget[i]) {
-//       markMatches(MarkedGuess);
-//       return MarkedGuess;
-//     }
-//   }
-
-// function perfectMatch(guess: string, hiddenTaget: string): boolean {
-//   let counter = 0;
-//   for (let i = 0; i < guess.length; i++) {
-//     if (guess[i] === hiddenTaget[i]) {
-//       counter++;
-//     }
-//   }
-//   return counter === guess.length;
-// }
