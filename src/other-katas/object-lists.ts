@@ -1,5 +1,5 @@
 interface objectProps {
-  [OtherProps: string]: unknown; //any key that is a number must have a value of unknown type
+  [OtherProps: string]: unknown; //any key that is a string must have a value of unknown type
   name: string;
   id: number;
 }
