@@ -10,7 +10,7 @@ interface IChar {
 
 export function markWordleGuess(
   guess: string,
-  hiddenTaget: string
+  hiddenTarget: string
 ): MarkedGuess {
   let MarkedGuess: MarkedGuess = [
     { value: guess[0], status: "not included" },
@@ -19,19 +19,19 @@ export function markWordleGuess(
     { value: guess[3], status: "not included" },
     { value: guess[4], status: "not included" },
   ];
-  findMatches(MarkedGuess, hiddenTaget);
-  if (guess === hiddenTaget) {
+  findMatches(MarkedGuess, hiddenTarget);
+  if (guess === hiddenTarget) {
     return MarkedGuess;
   }
-  findIncluded(MarkedGuess, hiddenTaget);
+  findIncluded(MarkedGuess, hiddenTarget);
   return MarkedGuess;
 }
 
 //================HELPER FUNCTIONS===============
 
-function findMatches(markedGuess: MarkedGuess, hiddenTaget: string): void {
+function findMatches(markedGuess: MarkedGuess, hiddenTarget: string): void {
   for (let charIdx in markedGuess) {
-    if (markedGuess[charIdx].value === hiddenTaget[charIdx]) {
+    if (markedGuess[charIdx].value === hiddenTarget[charIdx]) {
       markedGuess[charIdx].status = "matched";
     }
   }
