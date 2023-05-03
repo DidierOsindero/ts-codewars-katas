@@ -1,4 +1,6 @@
-import { lengthOfLongestSubstring } from "./lengthOfLongestSubstring";
+import { lengthOfLongestSubstring } from "./repeatAttempt";
+
+lengthOfLongestSubstring;
 describe("lengthOfLongestSubstring", () => {
   it("should recognise repetition in special characters", () => {
     expect(lengthOfLongestSubstring("ab!!!!c")).toBe(3);
