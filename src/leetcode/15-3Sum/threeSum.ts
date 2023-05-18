@@ -170,8 +170,8 @@ export function threeSum(nums: number[]): number[][] {
       else if (candidate < nums[l] + nums[r]) r--;
       else {
         returnArr.push([nums[i], nums[l], nums[r]]);
-        while (l < r && nums[l] + 1 === l) l++;
-        while (l < r && nums[r] - 1 === r) r--;
+        while (l < r && nums[l + 1] === nums[l]) l++;
+        while (l < r && nums[r - 1] === nums[r]) r--;
         l++;
         r--;
       }
@@ -180,5 +180,5 @@ export function threeSum(nums: number[]): number[][] {
   return returnArr;
 }
 
-threeSum([0, 0, 0, 0]);
+threeSum([-2, 0, 1, 1, 2]);
 threeSum([-1, 0, 1, 2, -1, -4]);
