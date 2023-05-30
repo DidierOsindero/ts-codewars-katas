@@ -54,12 +54,8 @@ export function solveSudoku(
 }
 
 function nextRowColumn(row: number, column: number): number[] {
-  if (column === 8) {
-    row++;
-    return [row, 0];
-  }
-  column++;
-  return [row, column];
+  if (column === 8) return [row + 1, 0];
+  return [row, column + 1];
 }
 
 const board = [
@@ -74,4 +70,3 @@ const board = [
   [".", ".", ".", "2", "7", "5", "9", ".", "."],
 ];
 solveSudoku(board);
-console.log(board);
