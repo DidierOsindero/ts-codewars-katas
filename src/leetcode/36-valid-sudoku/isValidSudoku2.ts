@@ -17,7 +17,7 @@ export function isValidCell2(
   column: number
 ): boolean {
   const cellToValidate = board[row][column];
-  if (cellToValidate.val === ".") return true;
+  if (cellToValidate.val === "") return true;
   let squareCurrentRow = Math.floor(row / 3) * 3;
   let squareCurrentColumn = Math.floor(column / 3) * 3;
 
@@ -25,13 +25,17 @@ export function isValidCell2(
     //Going down a column
     if (i !== row) {
       const currentCell = board[i][column];
-      if (currentCell.val === cellToValidate.val) return false;
+      if (currentCell.val === cellToValidate.val) {
+        return false;
+      }
     }
 
     //Going along a row
     if (i !== column) {
       const currentCell = board[row][i];
-      if (currentCell.val === cellToValidate.val) return false;
+      if (currentCell.val === cellToValidate.val) {
+        return false;
+      }
     }
 
     //Skip cell to validate and check if there number is duplicated in square

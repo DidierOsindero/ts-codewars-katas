@@ -10,12 +10,12 @@ export function solveSudoku2(
   column: number = 0
 ): boolean {
   // Base case => return if last board[row][column] on board is reached and it is valid
-  if (row === 8 && column === 8 && board[row][column].val !== ".") {
+  if (row === 8 && column === 8 && board[row][column].val !== "") {
     return isValidCell2(board, row, column);
   }
 
   //Find next empty slot
-  while (board[row][column].val !== "." && !(row === 8 && column === 8)) {
+  while (board[row][column].val !== "" && !(row === 8 && column === 8)) {
     const result = nextRowColumn(row, column);
     row = result[0];
     column = result[1];
@@ -29,7 +29,7 @@ export function solveSudoku2(
       if (row === 8 && column === 8) return true;
 
       //if somewhere further along the path does not work (returns false)
-      // reset board[row][column].val to "."
+      // reset board[row][column].val to ""
       if (
         solveSudoku2(
           board,
@@ -37,15 +37,13 @@ export function solveSudoku2(
           nextRowColumn(row, column)[1]
         ) === false
       ) {
-        board[row][column].val = ".";
-        board[row][column].status = "user-defined";
+        board[row][column].val = "";
       } else return true;
     }
   }
 
   if (row === 0 && column === 0) return true;
-  board[row][column].val = ".";
-  board[row][column].status = "user-defined";
+  board[row][column].val = "";
   return false;
 }
 
@@ -56,112 +54,112 @@ function nextRowColumn(row: number, column: number): number[] {
 
 const board: ICell[][] = [
   [
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "9", status: "pre-defined" },
     { val: "7", status: "pre-defined" },
     { val: "4", status: "pre-defined" },
     { val: "8", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
   ],
   [
     { val: "7", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
   ],
   [
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "2", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "1", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "9", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
   ],
   [
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "7", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "2", status: "pre-defined" },
     { val: "4", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
   ],
   [
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "6", status: "pre-defined" },
     { val: "4", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "1", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "5", status: "pre-defined" },
     { val: "9", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
   ],
   [
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "9", status: "pre-defined" },
     { val: "8", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
     { val: "3", status: "pre-defined" },
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
   ],
   [
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
     { val: "8", status: "pre-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
     { val: "3", status: "pre-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
     { val: "2", status: "pre-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
   ],
   [
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
     { val: "6", status: "pre-defined" },
   ],
   [
-    { val: ".", status: "user-defined" },
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
     { val: "2", status: "pre-defined" },
 
@@ -171,9 +169,112 @@ const board: ICell[][] = [
 
     { val: "9", status: "pre-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
 
-    { val: ".", status: "user-defined" },
+    { val: "", status: "user-defined" },
   ],
 ];
-console.log(solveSudoku2(board), board, isValidSudoku2(board));
+
+const board2: ICell[][] = [
+  [
+    { val: "1", status: "user-defined" },
+    { val: "2", status: "user-defined" },
+    { val: "3", status: "pre-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+  ],
+  [
+    { val: "4", status: "pre-defined" },
+    { val: "5", status: "user-defined" },
+    { val: "6", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+  ],
+  [
+    { val: "7", status: "user-defined" },
+    { val: "8", status: "pre-defined" },
+    { val: "9", status: "user-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+  ],
+  [
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "1", status: "pre-defined" },
+    { val: "2", status: "pre-defined" },
+    { val: "3", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+  ],
+  [
+    { val: "", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "4", status: "user-defined" },
+    { val: "5", status: "user-defined" },
+    { val: "6", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+  ],
+  [
+    { val: "", status: "user-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "7", status: "pre-defined" },
+    { val: "8", status: "user-defined" },
+    { val: "9", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+  ],
+  [
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "1", status: "user-defined" },
+    { val: "2", status: "user-defined" },
+    { val: "3", status: "user-defined" },
+  ],
+  [
+    { val: "", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "user-defined" },
+    { val: "4", status: "user-defined" },
+    { val: "5", status: "user-defined" },
+    { val: "6", status: "user-defined" },
+  ],
+  [
+    { val: "", status: "user-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "", status: "user-defined" },
+    { val: "", status: "pre-defined" },
+    { val: "7", status: "user-defined" },
+    { val: "8", status: "user-defined" },
+    { val: "9", status: "user-defined" },
+  ],
+];
+
+// console.log(solveSudoku2(board2), board2, isValidSudoku2(board2));

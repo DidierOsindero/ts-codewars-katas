@@ -11,9 +11,11 @@ const sudokuGenerator = (): string[][] => {
   fillBox(board, 0, 0);
   fillBox(board, 3, 3);
   fillBox(board, 6, 6);
+  console.log(board);
 
   solveSudoku(board);
-  removeNums(board, 64);
+  removeNums(board, 54);
+
   return board;
 };
 
